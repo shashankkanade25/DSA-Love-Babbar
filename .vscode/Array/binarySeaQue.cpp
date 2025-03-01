@@ -4,7 +4,7 @@ using namespace std;
 int firstOccrance(int arr[],int size,int key){
     int start = 0;
     int end = size - 1;
-    int mid=(start+end)/2;
+    int mid = start + (end - start) / 2;
     int ans = -1;
 
     while(start <=end){
@@ -18,7 +18,8 @@ int firstOccrance(int arr[],int size,int key){
         else{      // goto left of arr
             end= mid - 1;
         }
-        mid=(start+end)/2;
+         mid = start + (end - start) / 2;
+
     }
     return ans;
 }
@@ -47,7 +48,7 @@ int lastOccrance(int arr[],int size,int key){
 }
 int main(){
 
-    int odd[7]={0,0,9,6,4,3,0};
+    int odd[7]={0,0,9,6,4,3,9};         //sorted array cause BS
     int firstOcc=firstOccrance(odd,7,0);
     cout<<"The first occurance of 0 is at index:"<<firstOccrance(odd,7,0)<<endl;
     cout<<"The last occrance  of  0 is at index:"<<lastOccrance(odd,7,0)<<endl;
