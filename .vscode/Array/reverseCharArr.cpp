@@ -12,12 +12,18 @@ void reverseChar(char name[],int n){
     } 
 }
 int main (){
-    char name[10];
-    cout<<"Enter name :"<<endl;
-    cout << name<<endl; 
-    reverseChar(name);
-    cout<<"Reversed name is:"<<reverseChar(name)<<endl;
-    cout << name<<endl;
+    char name[50];
+    cout<<"Enter name :";
+    cin>> name; 
+
+     // Calculate the length of the input string
+     int length = 0;
+     while (name[length] != 0) {
+         length++;
+     }
+    
+    reverseChar(name,length);
+    cout<<"Reversed name is:"<<name<<endl;
     return 0;
 
 }
