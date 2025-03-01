@@ -1,30 +1,28 @@
 #include <iostream>
 using namespace std;
 
-void removeDuplicates(int arr[], int &n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; j < n; ) {
-            if (arr[i] == arr[j]) {
-                // Shift elements to the left
-                for (int k = j; k < n - 1; k++) {
-                    arr[k] = arr[k + 1];
-                }
-                n--; // Reduce size of array
-            } else {
-                j++;
-            }
+int removeDuplicates(int arr[], int &n) {
+    if(n == 0 || n == 1){
+        return n;
+    }
+
+    int i = 0;  //store unique ele.
+    for(int j = 0 ; j < n-1 ; j++){
+        if(arr[j]!=arr[j+1]){
+            arr[i++]=arr[j];
         }
     }
+    arr[i++]=arr[n-1];      //for last ele.
+    return i;
 }
-
 int main() {
-    int arr[] = {1, 2, 2, 3, 4, 4, 5};
+    int arr[] = {1, 2, 2, 3, 4, 4, 5, 7 ,7};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    removeDuplicates(arr, n);
+    int newsize = removeDuplicates(arr,n);
 
     cout << "Array after removing duplicates: ";
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < newsize; i++) {
         cout << arr[i] << " ";
     }
 
