@@ -8,10 +8,13 @@ void printArray(int arr[],int size){
 int findUnique(int arr[],int size){
     int ans = 0;
     for (int i=0 ; i<size ; i++){   //arr index sts frm 0 so x =
-            ans=ans ^ arr[i];         //XOR to find unique number
+            ans=ans ^ arr[i];         //XOR to find unique number  a^a = 0  a^0 = a
         }
         return ans;
     }
+
+    //The XOR method is only useful when exactly one element appears once, while others appear twice.
+    
 int main(){
 int arr[7]={2,3,4,3,2,5,4};
 
