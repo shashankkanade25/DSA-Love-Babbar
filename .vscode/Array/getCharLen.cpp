@@ -3,7 +3,7 @@ using namespace std;
 
 int getLength(char name[]){
     int count = 0;
-    for (int i=0; name[i]!='\0';i++){
+    for (int i=0; name[i] != '\0' ;i++){     //null character '\0' marks the end of the string
         count++;
     }
     return count;
@@ -19,5 +19,5 @@ int main(){
 
     cout<<"length of char array:"<<getLength(name)<<endl;
     return 0;
-// stop execution when space tab newline given
+// stops execution when space tab newline given
 }
