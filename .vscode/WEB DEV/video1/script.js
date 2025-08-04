@@ -1,1 +1,0 @@
-alert("Sigma web developement")
